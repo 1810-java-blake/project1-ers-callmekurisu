@@ -16,12 +16,12 @@ public class ConnectionUtil {
 		}
 		
 		public static Connection getConnection() throws SQLException {
-			String url = System.getenv("db_url");
-			String port = System.getenv("db_port");
-			String dbName = System.getenv("db_name");
-			String dbSchema = System.getenv("db_schema");
-			String username = System.getenv("db_username");
-			String password = System.getenv("db_password");
+			String url = System.getProperty("db_url");
+			String port = System.getProperty("db_port");
+			String dbName = System.getProperty("db_name");
+			String dbSchema = System.getProperty("db_schema");
+			String username = System.getProperty("db_username");
+			String password = System.getProperty("db_password");
 
 			String dataSource = "jdbc:postgresql://" + url + ":" + port + "/" + dbName + "?currentSchema=" + dbSchema;
 

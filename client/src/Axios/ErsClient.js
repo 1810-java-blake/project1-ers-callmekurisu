@@ -2,7 +2,7 @@ import axios from 'axios';
 import { environment } from './Environment';
 
 const ErsClient = axios.create({ 
-baseURL: context,
+baseURL: environment.context,
 headers: {
     'Content-Type': 'application/json'
   },

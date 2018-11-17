@@ -21,7 +21,7 @@ public class HashingUtil {
 	//42 because its the answer to all things
 	public static String hashword(String p) throws NoSuchAlgorithmException {
 		MessageDigest digest = MessageDigest.getInstance("SHA-256");
-		String salt = System.getenv("salt");
+		String salt = System.getProperty("salt");
 		String plaintext = p+salt;
 		byte[] finalHash = digest.digest(
 				  plaintext.getBytes(StandardCharsets.UTF_8));
